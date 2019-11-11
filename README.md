@@ -1,57 +1,46 @@
-# spider_python
+# 获取手机拍摄照片的经纬度及详细位置的python脚本
 
-## 详细教程
+## 说明
 
-如果想查看详细的教程，请关注微信公众号：**AirPython**
+本脚本的源码是xingag大佬的，本人只是稍作了改动，及添加了一些说明方式，使得脚本能够应用于更多场合。
 
-![](./raw/qr.jpeg)
-
-
-
-## 普通的爬虫
-
-* [爬取电影天堂最新的电影数据 - xpath](./spiders/spider_dytt.py)
-
-* [爬取腾讯招聘的职位数据 - xpath](./spiders/spider_tencent_recruit.py)
-
-* [爬取中国天气网全国天气并生成饼状图 - bs4](./spiders/spider_china_weather.py)
-
-* [爬取古诗词网的数据 - re](./spiders/spider_gushiwen.py)
-
-* [爬取糗事百科上的段子数据 - re](./spiders/spider_qiu_shi_bai_ke.py)
+[xingag大佬的github](https://github.com/xingag/)
+[本人的github](https://github.com/FDlucifer/)
 
 
+### 脚本使用说明
 
-## 多线程爬虫
+* 1.先从高德开放平台上注册后再申请一个key，如下图所示。
 
-* [多线程爬取斗图吧的表情图并下载到本地 - xpath + threading](./spiders/spider_dou_tu_la.py)
-  * [使用 itchat 发送表情到指定的人和微信群](./spiders/发表情/)
-* [多线程爬取百思不得姐的文字和图片信息并写入到csv中](./spiders/spider_bai_si_bu_de_jie.py)
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location.jpg)
 
+* 2.如下几图所示修改main.py的源代码,使其对应正确的key和要分析的图片地址。
 
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location2.jpg)
 
-## Selenium 自动化爬虫
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location3.jpg)
 
-* [爬取拉勾网的职位信息 - selenium + requests + lxml ](./spiders/spider_lagou.py)
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location4.jpg)
 
-* [爬取 Boss 直聘网的职位信息 - selenium + lxml](./spiders/spider_boss.py)
+* 3.运行代码前，先执行下面的代码安装exifread库。
 
+``` bash
+pip3 install exifread
+```
+该库是识别图片元数据的库，使用 exifread 库可以直接读取图片文件，获取到图片的元数据，包含经度、纬度、南北纬方向、东西经方向和拍摄时间。
 
+* 4.运行代码时，main.py和position_utils.py必须放在同一目录下。
 
-## Scrapy 框架爬虫
-* [爬取糗事百科的段子保存到 JSON 文件中](./scrapy/qsbk/readme.MD)
-* [爬取微信小程序论坛的数据](./scrapy/weixin_community/readme.MD)
-* [登录豆瓣网并修改个性签名](./scrapy/douban_login/readme.MD)
-* [下载汽车之家的高清图片到本地](./scrapy/qczj/readme.MD)
-* [爬取简书网所有文章数据](./scrapy/jianshu_spider/)
-* [爬取房天下所有房的数据，包含新房、二手房](./scrapy/sfw_spider)
+因为通过 GPS 获取的经度、纬度和高德地图的坐标存在一定的误差，这里需要用position_utils.py脚本把坐标转换为「火星坐标系」。
 
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location5.jpg)
 
+## 最后附上一张效果图
 
-## Node.js 爬虫
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location6.jpg)
 
-* [使用 puppeteer 爬取简书文章并保存到本地](./js/jian_shu.js)
+###**<font color="red">牛批哄哄的有没有?</font>**
 
-## 其他
+#### 最后觉得不错，请按下图扫码捐助，谢谢。
 
-* [使用 Python 定位到女朋友的位置](./获取女友的位置)
+![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/wechat-qcode.jpg)
