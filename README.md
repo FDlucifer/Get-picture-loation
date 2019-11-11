@@ -39,7 +39,7 @@ pip3 install exifread
 
 ![](https://raw.githubusercontent.com/wiki/FDlucifer/FDlucifer.github.io/location6.jpg)
 
-###**<font color="red">牛批哄哄的有没有?</font>**
+### ***<font color="red">牛批哄哄的有没有?</font>***
 
 #### 最后觉得不错，请按下图扫码捐助，谢谢。
 
